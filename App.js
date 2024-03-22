@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, Animated, Dimensions } from 'react-native';
 import { useFonts } from 'expo-font';
 
@@ -6,6 +6,9 @@ const { width } = Dimensions.get("window");
 const circleWidth = width / 2;
 
 const UIAnimation = () => {
+  const [fontsLoaded] = useFonts({
+    'Itim-Regular': require('./assets/fonts/Itim/Itim-Regular.ttf'),
+  });
 
   const translation = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
 
@@ -43,7 +46,11 @@ const UIAnimation = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.babyUniversity}>Baby University</Text>
+      <Text style={[styles.babyUniversity,
+      {
+        fontFamily: 'Itim-Regular', fontSize: 50
+      }]}
+                  >Baby University</Text>
       <Animated.View
         style={[
           styles.ball,
@@ -61,7 +68,6 @@ const UIAnimation = () => {
           style={[
             styles.ballYellowTop,
             { top: -30 },
-        //    { opacity: 0.2 },
             { transform: [{ scale: scale }] },
           ]}
         />
@@ -69,31 +75,28 @@ const UIAnimation = () => {
       <Animated.View
         style={[
           styles.ballYellowBottom,
-        //  { opacity: 0.2 },
           { transform: [{ scale: scale }] },
         ]}
       />
       <Animated.View
         style={[
           styles.ballRed,
-        //  { opacity: 0.2 },
           { transform: [{ scale: scale }] },
         ]}
       />
       <Animated.View
         style={[
           styles.ballGreenRight,
-        //  { opacity: 0.2 },
           { transform: [{ scale: scale }] },
         ]}
       />
       <Animated.View
         style={[
           styles.ballGreenBottom,
-        //  { opacity: 0.2 },
           { transform: [{ scale: scale }] },
         ]}
       />
+      <View style={styles.coveringI} />
     </View>
   );
 };
@@ -110,8 +113,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: '45%',
     left: '35%',
-    fontFamily: 'Itim',
-    fontSize: 50,
   },
   ball: {
     backgroundColor: '#dd3434',
@@ -199,6 +200,14 @@ const styles = StyleSheet.create({
     height: 220,
     left: 50,
     bottom: -100,
+  },
+  coveringI: {
+    width: 10,
+    height: 10,
+    backgroundColor: 'lightblue',
+    position: 'absolute',
+    top: 376,
+    left: 660,
   },
 });
 

@@ -27,7 +27,12 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-font"
+      [
+      "expo-font",
+      {
+        "fonts": ["./assets/fonts/Itim/Itim-Regular.ttf"]
+      }
+      ]
     ]
   }
 }

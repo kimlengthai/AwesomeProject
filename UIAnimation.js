@@ -88,7 +88,7 @@ const UIAnimation = () => {
           { transform: [{ scale: scale }] },
         ]}
       />
-      <View style={styles.coveringI}></View>
+      <View style={styles.coveringI} />
     </View>
   );
 };
@@ -195,12 +195,13 @@ const styles = StyleSheet.create({
     bottom: -100,
   },
   coveringI: {
-    backgroundColor: 'black',
-    top: -55,
-    left: 35,
-    width: 20,
+    width: 100,
     height: 20,
-    zIndex: 2,
+    backgroundColor: 'black',
+    borderRadius: 50,
+    position: 'absolute',
+    top: 300,
+    left: 600,
   },
 });
 
