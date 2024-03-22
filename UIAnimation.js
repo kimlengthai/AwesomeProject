@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, Animated, Dimensions } from 'react-native';
-import { useFonts } from 'expo-font';
 
 const { width } = Dimensions.get("window");
 const circleWidth = width / 2;
@@ -61,7 +60,6 @@ const UIAnimation = () => {
           style={[
             styles.ballYellowTop,
             { top: -30 },
-        //    { opacity: 0.2 },
             { transform: [{ scale: scale }] },
           ]}
         />
@@ -69,31 +67,28 @@ const UIAnimation = () => {
       <Animated.View
         style={[
           styles.ballYellowBottom,
-        //  { opacity: 0.2 },
           { transform: [{ scale: scale }] },
         ]}
       />
       <Animated.View
         style={[
           styles.ballRed,
-        //  { opacity: 0.2 },
           { transform: [{ scale: scale }] },
         ]}
       />
       <Animated.View
         style={[
           styles.ballGreenRight,
-        //  { opacity: 0.2 },
           { transform: [{ scale: scale }] },
         ]}
       />
       <Animated.View
         style={[
           styles.ballGreenBottom,
-        //  { opacity: 0.2 },
           { transform: [{ scale: scale }] },
         ]}
       />
+      <View style={styles.coveringI}></View>
     </View>
   );
 };
@@ -110,7 +105,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: '45%',
     left: '35%',
-    fontFamily: 'Itim',
     fontSize: 50,
   },
   ball: {
@@ -199,6 +193,14 @@ const styles = StyleSheet.create({
     height: 220,
     left: 50,
     bottom: -100,
+  },
+  coveringI: {
+    backgroundColor: 'black',
+    top: -55,
+    left: 35,
+    width: 20,
+    height: 20,
+    zIndex: 2,
   },
 });
 
