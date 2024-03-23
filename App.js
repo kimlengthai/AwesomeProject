@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { View, Text, StyleSheet, Animated, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Animated, Dimensions, Easing } from 'react-native';
 import { useFonts } from 'expo-font';
 
 const { width } = Dimensions.get("window");
@@ -14,14 +14,14 @@ const UIAnimation = () => {
 
   useEffect(() => {
     Animated.sequence([
-      Animated.spring(translation.y, { toValue: 100, useNativeDriver: true }),
-      Animated.spring(translation.y, { toValue: 170, useNativeDriver: true }),
-      Animated.spring(translation.x, { toValue: 150, useNativeDriver: true }),
-      Animated.spring(translation.y, { toValue: 270, useNativeDriver: true }),
-      Animated.spring(translation.x, { toValue: 300, useNativeDriver: true }),
-      Animated.spring(translation.y, { toValue: 370, useNativeDriver: true }),
-      Animated.spring(translation.x, { toValue: 413, useNativeDriver: true }),
-      Animated.spring(translation.y, { toValue: 458, useNativeDriver: true }),
+      Animated.timing(translation.y, { toValue: 100, duration: 2000, easing: Easing.easeIn, useNativeDriver: true }),
+      Animated.timing(translation.y, { toValue: 170, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
+      Animated.timing(translation.x, { toValue: 150, duration: 2000, easing: Easing.linear, useNativeDriver: true }),
+      Animated.timing(translation.y, { toValue: 270, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
+      Animated.timing(translation.x, { toValue: 300, duration: 2000, easing: Easing.linear, useNativeDriver: true }),
+      Animated.timing(translation.y, { toValue: 370, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
+      Animated.timing(translation.x, { toValue: 413, duration: 2000, easing: Easing.linear, useNativeDriver: true }),
+      Animated.timing(translation.y, { toValue: 458, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
     ]).start();
   }, []);
 
@@ -29,10 +29,15 @@ const UIAnimation = () => {
 
   Animated.loop(
     Animated.sequence([
-      Animated.timing(move, { toValue: 1, duration: 4000, useNativeDriver: true }),
-      Animated.timing(move, { toValue: 0, duration: 4000, useNativeDriver: true }),
+      Animated.timing(move, { toValue: 1, duration: 4000, easing: Easing.linear, useNativeDriver: true }),
+      Animated.timing(move, { toValue: 0, duration: 4000, easing: Easing.linear, useNativeDriver: true }),
     ])
   ).start();
+
+  const rotation = move.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['0deg', '360deg'],
+  });
 
   const translate = move.interpolate({
     inputRange: [0, 1],
@@ -55,7 +60,7 @@ const UIAnimation = () => {
         style={[
           styles.ball,
           {
-            transform: [{ translateY: translation.y }, { translateX: translation.x }],
+            transform: [{ translateY: translation.y }, { translateX: translation.x }, { rotate: rotation }],
           },
         ]}
       />
@@ -125,10 +130,9 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   shadow: {
-    width: 187,
+    width: 185,
     height: 20,
     backgroundColor: 'gray',
-    borderRadius: 50,
     position: 'absolute',
     top: 100,
     left: 200,
@@ -136,10 +140,9 @@ const styles = StyleSheet.create({
     zIndex: -1,
   },
   shadow2: {
-    width: 187,
+    width: 185,
     height: 20,
     backgroundColor: 'gray',
-    borderRadius: 50,
     position: 'absolute',
     top: 200,
     left: 350,
@@ -147,13 +150,12 @@ const styles = StyleSheet.create({
     zIndex: -1,
   },
   shadow3: {
-    width: 155,
+    width: 150,
     height: 20,
     backgroundColor: 'gray',
-    borderRadius: 50,
     position: 'absolute',
     top: 300,
-    left: 500,
+    left: 498,
     boxShadow: '0 0 10px black',
     zIndex: -1,
   },
