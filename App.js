@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   shadow: {
-    width: 100,
+    width: 187,
     height: 20,
     backgroundColor: 'gray',
     borderRadius: 50,
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     zIndex: -1,
   },
   shadow2: {
-    width: 100,
+    width: 187,
     height: 20,
     backgroundColor: 'gray',
     borderRadius: 50,
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     zIndex: -1,
   },
   shadow3: {
-    width: 100,
+    width: 155,
     height: 20,
     backgroundColor: 'gray',
     borderRadius: 50,
