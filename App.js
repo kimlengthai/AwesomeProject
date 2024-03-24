@@ -153,12 +153,12 @@ const styles = StyleSheet.create({
     zIndex: -1,
   },
   shadow3: {
-    width: 150,
+    width: 185,
     height: 20,
     backgroundColor: 'gray',
     position: 'absolute',
     top: 300,
-    left: 498,
+    left: 463,
     boxShadow: '0 0 10px black',
     zIndex: -1,
   },
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     width: 220,
     height: 220,
     right: -80,
-    top: 10,
+    top: 100,
   },
   ballGreenBottom: {
     backgroundColor: 'rgb(162, 193, 60)',
