@@ -34,11 +34,6 @@ const UIAnimation = () => {
     ])
   ).start();
 
-  const rotation = move.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['0deg', '360deg'],
-  });
-
   const translate = move.interpolate({
     inputRange: [0, 1],
     outputRange: [0, circleWidth / 6],
@@ -60,7 +55,7 @@ const UIAnimation = () => {
         style={[
           styles.ball,
           {
-            transform: [{ translateY: translation.y }, { translateX: translation.x }, { rotate: rotation }],
+            transform: [{ translateY: translation.y }, { translateX: translation.x }],
           },
         ]}
       />
