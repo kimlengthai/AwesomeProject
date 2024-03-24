@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
     zIndex: -1,
   },
   ballYellowTop: {
-    backgroundColor: 'rgb(246, 255, 44)',
+    backgroundColor: 'rgb(247, 213, 83)',
     borderRadius: 75,
     position: 'absolute',
     width: 150,
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     left: 550,
   },
   ballYellowBottom: {
-    backgroundColor: 'rgb(246, 255, 44)',
+    backgroundColor: 'rgb(247, 213, 83)',
     borderRadius: 75,
     position: 'absolute',
     width: 160,
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     bottom: -80,
   },
   ballRed: {
-    backgroundColor: 'rgb(251, 114, 126)',
+    backgroundColor: 'rgb(237, 93, 91)',
     borderRadius: 75,
     position: 'absolute',
     width: 150,
