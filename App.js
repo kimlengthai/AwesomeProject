@@ -128,7 +128,15 @@ const styles = StyleSheet.create({
     left: 235,
     top: -100,
     zIndex: 1,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 5,
   },
+  
   shadow: {
     width: 185,
     height: 20,
