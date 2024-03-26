@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, Animated, Dimensions, Easing } from 'react-native';
 import { useFonts } from 'expo-font';
 
-const { width } = Dimensions.get("window");
+const { width, height } = Dimensions.get("window");
 const circleWidth = width / 2;
 
 const UIAnimation = () => {
@@ -113,6 +113,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: '45%',
     left: '35%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   ball: {
     backgroundColor: '#dd3434',
@@ -211,7 +213,7 @@ const styles = StyleSheet.create({
     height: 10,
     backgroundColor: 'lightblue',
     position: 'absolute',
-    top: 376,
+    top: 378,
     left: 660,
   },
 });
