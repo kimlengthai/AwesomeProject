@@ -111,12 +111,8 @@ const styles = StyleSheet.create({
   babyUniversity: {
     color: 'darkblue',
     position: 'absolute',
-    /*second, it doesn't affect anything */
-    top: height >= 834 ? '45%' : '5%',
-    left: width >= 1024 ? '31.5%' : '35%',
-    /*first, it affects the 7th gen.
-      second, it affects the 4th gen.*/
-    top: (height > 836) ? '45%': '43.8%',
+    left: (width > 178.5) ? '31.5%' : '33%',
+    top: (height >= 834) ? '44%' : '44%',
     justifyContent: 'center',
     alignItems: 'center',
   },
