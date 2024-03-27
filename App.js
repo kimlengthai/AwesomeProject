@@ -14,13 +14,13 @@ const UIAnimation = () => {
 
   useEffect(() => {
     Animated.sequence([
-      Animated.timing(translation.y, { toValue: 100, duration: 2000, easing: Easing.easeIn, useNativeDriver: true }),
+      Animated.timing(translation.y, { toValue: 100, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
       Animated.timing(translation.y, { toValue: 170, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
-      Animated.timing(translation.x, { toValue: 150, duration: 2000, easing: Easing.linear, useNativeDriver: true }),
+      Animated.timing(translation.x, { toValue: 150, duration: 1000, easing: Easing.linear, useNativeDriver: true }),
       Animated.timing(translation.y, { toValue: 270, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
-      Animated.timing(translation.x, { toValue: 300, duration: 2000, easing: Easing.linear, useNativeDriver: true }),
+      Animated.timing(translation.x, { toValue: 300, duration: 1000, easing: Easing.linear, useNativeDriver: true }),
       Animated.timing(translation.y, { toValue: 370, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
-      Animated.timing(translation.x, { toValue: 413, duration: 2000, easing: Easing.linear, useNativeDriver: true }),
+      Animated.timing(translation.x, { toValue: 413, duration: 1000, easing: Easing.linear, useNativeDriver: true }),
       Animated.timing(translation.y, { toValue: 458, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
     ]).start();
   }, []);
@@ -46,10 +46,7 @@ const UIAnimation = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={[styles.babyUniversity,
-      {
-        fontFamily: 'Itim-Regular', fontSize: 50
-      }]}
+      <Text style={styles.babyUniversity}
                   >Baby University</Text>
       <Animated.View
         style={[
@@ -115,6 +112,8 @@ const styles = StyleSheet.create({
     top: (height >= 834) ? '44%' : '44%',
     justifyContent: 'center',
     alignItems: 'center',
+    fontFamily: 'Itim-Regular', 
+    fontSize: 50,
   },
   ball: {
     backgroundColor: '#dd3434',
