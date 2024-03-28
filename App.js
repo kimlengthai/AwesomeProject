@@ -12,15 +12,23 @@ const UIAnimation = () => {
 
   const translation = useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
 
+  /*Don't forget to focus on the ball moving*/
   useEffect(() => {
     Animated.sequence([
       Animated.timing(translation.y, { toValue: 100, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
+
       Animated.timing(translation.y, { toValue: 170, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
+
       Animated.timing(translation.x, { toValue: 150, duration: 1000, easing: Easing.linear, useNativeDriver: true }),
+
       Animated.timing(translation.y, { toValue: 270, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
+      
       Animated.timing(translation.x, { toValue: 300, duration: 1000, easing: Easing.linear, useNativeDriver: true }),
+      
       Animated.timing(translation.y, { toValue: 370, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
+      
       Animated.timing(translation.x, { toValue: 413, duration: 1000, easing: Easing.linear, useNativeDriver: true }),
+      
       Animated.timing(translation.y, { toValue: 458, duration: 1000, easing: Easing.easeIn, useNativeDriver: true }),
     ]).start();
   }, []);
